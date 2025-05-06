@@ -23,26 +23,12 @@ undirected_matrix = [
 labels = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C"]
 
 
-def dir_matrix_print(vertex, param):
-    print("\n    Directed graph:\n")
+def matrix_print(matrix, vertex, param, title):
+    print(f"\n    {title}:\n")
     print("   ", " ".join(labels))
     print("   _________________________")
     for row in range(vertex):
         print(
             f"{param[row]} |",
-            " ".join(str(directed_matrix[row][column]) for column in range(vertex)),
-        )
-
-
-def undir_matrix_print(vertex, param):
-    print("    Undirected graph:\n")
-    print("   ", " ".join(labels))
-    print("   _________________________")
-    for row in range(vertex):
-        print(
-            f"{param[row]} |",
-            " ".join(
-                str(max(undirected_matrix[row][column], undirected_matrix[column][row]))
-                for column in range(vertex)
-            ),
+            " ".join(str(matrix[row][column]) for column in range(vertex)),
         )
